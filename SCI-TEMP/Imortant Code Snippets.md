@@ -1,6 +1,6 @@
 ## Horizontal Carousel in Card ##
 ---
-```
+``` flutter
 import 'package:flutter/material.dart';
 
 main() => runApp(MaterialApp(home: MyHomePage()));
@@ -61,7 +61,7 @@ class MyHomePage extends StatelessWidget {
 ```
 ---
 ## Grid View ##
-```
+```flutter
 import 'package:flutter/material.dart';
 
 void main() {
@@ -101,7 +101,7 @@ class MyApp extends StatelessWidget {
 ---
 ## Stateful Builder ##
 ---
-```
+``` flutter
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: MyApp()));
