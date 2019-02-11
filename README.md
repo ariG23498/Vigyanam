@@ -1,2 +1,3 @@
 # sih-app-designs
-only the ui and ux design components shall be shared
+Only the UI and UX design components shall be shared.
+The application, is a design centered application for ministry of culture for **SIH'09**
