@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Answer.dart';
 
 class Quiz extends StatefulWidget {
   @override
@@ -8,9 +9,19 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   var i = 0;
 
-  Image func(var a) {
-    return new Image.asset("assets/answer$a.png",
-        height: (MediaQuery.of(context).size.height) * 0.20);
+  GestureDetector func(var a) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder:(BuildContext context){
+          return new Answer(a); 
+        }));
+      },
+      child: new Hero(
+        tag: 'hero$a',
+        child: new Image.asset("assets/answer$a.png",
+            height: (MediaQuery.of(context).size.height) * 0.20),
+      ),
+    );
   }
 
   @override
@@ -44,13 +55,13 @@ class _QuizState extends State<Quiz> {
                     children: <Widget>[
                       // new Image.asset("assets/answer$i.png",
                       //     height: (MediaQuery.of(context).size.height) * 0.20),
-                      func(++i),
+                      func(1),
                       new Padding(
                         padding: EdgeInsets.all(5.0),
                       ),
                       // new Image.asset("assets/answer${++i}.png",
                       //     height: (MediaQuery.of(context).size.height) * 0.20),
-                      func(++i),
+                      func(2),
                     ],
                   ),
                   new Row(
@@ -59,13 +70,13 @@ class _QuizState extends State<Quiz> {
                     children: <Widget>[
                       // new Image.asset("assets/answer${++i}.png",
                       //     height: (MediaQuery.of(context).size.height) * 0.20),
-                      func(++i),
+                      func(3),
                       new Padding(
                         padding: EdgeInsets.all(5.0),
                       ),
                       // new Image.asset("assets/answer${++i}.png",
                       //     height: (MediaQuery.of(context).size.height) * 0.20),
-                      func(++i),
+                      func(4),
                     ],
                   ),
                 ],
