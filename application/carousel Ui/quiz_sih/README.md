@@ -1,5 +1,9 @@
 # quiz_sih
 
+### Carousel/Beautiful UI
+
+- The flutter app has an autoplayed carousel
+
 A new Flutter project.
 
 ## Getting Started
