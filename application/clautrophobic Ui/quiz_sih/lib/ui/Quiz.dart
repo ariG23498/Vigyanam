@@ -6,6 +6,13 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  var i = 0;
+
+  Image func(var a) {
+    return new Image.asset("assets/answer$a.png",
+        height: (MediaQuery.of(context).size.height) * 0.20);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,22 +42,30 @@ class _QuizState extends State<Quiz> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      new Image.asset("assets/answer1.png",
-                          height: (MediaQuery.of(context).size.height) * 0.20),
-                      new Padding(padding: EdgeInsets.all(5.0),),
-                      new Image.asset("assets/answer2.png",
-                          height: (MediaQuery.of(context).size.height) * 0.20),
+                      // new Image.asset("assets/answer$i.png",
+                      //     height: (MediaQuery.of(context).size.height) * 0.20),
+                      func(++i),
+                      new Padding(
+                        padding: EdgeInsets.all(5.0),
+                      ),
+                      // new Image.asset("assets/answer${++i}.png",
+                      //     height: (MediaQuery.of(context).size.height) * 0.20),
+                      func(++i),
                     ],
                   ),
                   new Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      new Image.asset("assets/answer3.png",
-                          height: (MediaQuery.of(context).size.height) * 0.20),
-                      new Padding(padding: EdgeInsets.all(5.0),),    
-                      new Image.asset("assets/answer4.png",
-                          height: (MediaQuery.of(context).size.height) * 0.20),
+                      // new Image.asset("assets/answer${++i}.png",
+                      //     height: (MediaQuery.of(context).size.height) * 0.20),
+                      func(++i),
+                      new Padding(
+                        padding: EdgeInsets.all(5.0),
+                      ),
+                      // new Image.asset("assets/answer${++i}.png",
+                      //     height: (MediaQuery.of(context).size.height) * 0.20),
+                      func(++i),
                     ],
                   ),
                 ],
