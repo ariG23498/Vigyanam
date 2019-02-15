@@ -1,0 +1,4 @@
+# ACTUAL ASSETS FOR THE APP #
+---
+## NAMING SCHEMA: ##
+---
