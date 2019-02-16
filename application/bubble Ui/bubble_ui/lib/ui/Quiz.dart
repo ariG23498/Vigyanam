@@ -19,7 +19,7 @@ class _QuizState extends State<Quiz> {
       },
       child: new Hero(
         tag: 'hero$a',
-        child: new Image.asset("assets/bubble$a.png",
+        child: new Image.asset("assets/global$a.png",
             height: (MediaQuery.of(context).size.height) * 0.30,
             width: (MediaQuery.of(context).size.width) ),
       ),
@@ -34,7 +34,7 @@ class _QuizState extends State<Quiz> {
         // this code is used to get the gradient
         decoration: new BoxDecoration(
           gradient: new LinearGradient(
-            colors: [Color(0xFFf56703), Color(0xFFFFE001)],
+            colors: [Color(0xFFffffff), Color(0xFFd2e8fc)],
             begin: Alignment.bottomLeft,
             end: Alignment.topRight,
             stops: [0.0, 1.0],
