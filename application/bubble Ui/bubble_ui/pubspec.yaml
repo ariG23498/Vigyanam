@@ -38,9 +38,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/bubble1.png
-   - assets/bubble2.png
-   - assets/bubble3.png
+   - assets/global1.png
+   - assets/global2.png
+   - assets/global3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
