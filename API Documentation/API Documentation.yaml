@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
-  description: "To be entered."
+  description: "Contains the documentation of the APIs for Vigyanam which is an application for measuring one's scientific temper."
   version: "1.0.0"
-  title: "Bigyanam"
+  title: "Vigyanam"
   contact:
     email: "mein2work@gmail.com"
 host: "sih-temper-app.herokuapp.com"
