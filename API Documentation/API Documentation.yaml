@@ -71,8 +71,8 @@ paths:
                 type: "integer"
         400:
           description: "this question does not exist"
-  /sendusrloc:
-    post:
+  /sendusrloc/{usr_id}:
+    put:
       tags:
       - "User data handling"
       summary: "Creates an entry for the user in the database when he takes the survey."
@@ -82,6 +82,11 @@ paths:
       produces:
       - "application/json"
       parameters:
+      - name: "usr_id"
+        in: "path"
+        description: "User id in path param to check if the user is existing or not"
+        required: true
+        type: string
       - name: "user"
         in: "body"
         description: "Information about the user who is taking the survey."
@@ -95,7 +100,7 @@ paths:
               - age_slab
             properties:
               usr_id:
-                type: integer
+                type: string
               latitude:
                 type: number
                 format: double
