@@ -4,8 +4,6 @@ import 'Quiz.dart';
 class Answer extends StatelessWidget {
   int a;
   Answer(this.a);
-
-
   @override
   Widget build(BuildContext context) {
     Image fun(var index) {
