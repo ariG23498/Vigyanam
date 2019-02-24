@@ -15,11 +15,8 @@ class Quiz extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              //question
-              // new Image.network(
-              //   "https://sih-temper-app.herokuapp.com/assetrepo/si_tf_1/q.png",
-              //   height: (MediaQuery.of(context).size.height) * 0.45,
-              // ),
+             
+             //question
               new CachedNetworkImage(
                 imageUrl: "https://sih-temper-app.herokuapp.com/assetrepo/si_tf_1/q.png",
                 placeholder: (context, url) => new CircularProgressIndicator(),
