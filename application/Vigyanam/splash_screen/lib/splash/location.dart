@@ -23,11 +23,13 @@ class _AgeLocState extends State<AgeLoc> {
   String _identifier;
   //identifier
 
+  Map m = new Map();
+
   Map<String, double> currentLocation = new Map();
   Location location = new Location();
   String error;
   Map d = new Map();
-
+  String errorCode = "";
   @override
   initState() {
     super.initState();
@@ -37,6 +39,18 @@ class _AgeLocState extends State<AgeLoc> {
 
     initPlatformState();
     initUniqueIdentifierState();
+    getErrorCode();
+  }
+
+  Future<void> getErrorCode() async {
+    String err;
+    var d = {
+      'age_slab': a,
+      'usr_id': _identifier,
+      'latitude': currentLocation['latitude'],
+      'longitude': currentLocation['longitude'],
+    };
+    m = await getJson(d);
   }
 
   Future<void> initPlatformState() async {
@@ -113,21 +127,30 @@ class _AgeLocState extends State<AgeLoc> {
         ),
       ),
       floatingActionButton: new FloatingActionButton(
-        onPressed: () async {
-          if (_identifier != 'unknown') {
-            var d = {
-              'age_slab': a,
-              'usr_id': _identifier,
-              'latitude': currentLocation['latitude'],
-              'longitude': currentLocation['longitude'],
-            };
-            Map m = await getJson(d);
-            if( m['code'] == "400"){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Error()));
-            }
-            else{
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Question()));
-            }
+        // onPressed: () async {
+        //   if (_identifier != 'unknown') {
+        //     var d = {
+        //       'age_slab': a,
+        //       'usr_id': _identifier,
+        //       'latitude': currentLocation['latitude'],
+        //       'longitude': currentLocation['longitude'],
+        //     };
+        // Map m = await getJson(d);
+        // if( m['code'] == "400"){
+        //   Navigator.push(context, MaterialPageRoute(builder: (context)=>Error()));
+        // }
+        // else{
+        //   Navigator.push(context, MaterialPageRoute(builder: (context)=>Question()));
+        // }
+        //   }
+        // },
+        onPressed: () {
+          if (m['code'] == "400") {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Error()));
+          } else {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Question()));
           }
         },
         child: new Icon(
