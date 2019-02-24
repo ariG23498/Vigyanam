@@ -16,8 +16,7 @@ class Answer extends StatelessWidget {
           maxRadius: MediaQuery.of(context).size.width * 0.15,
           backgroundColor: Colors.blue[100],
         );
-      }
-      else{
+      } else {
         return new CircleAvatar(
           child: new Icon(
             Icons.clear,
@@ -29,24 +28,27 @@ class Answer extends StatelessWidget {
       }
     }
 
-    return Scaffold(
-      body: new Container(
-        // this code is used to get the gradient
-        decoration: new BoxDecoration(
-          gradient: new LinearGradient(
-            colors: [Color(0xFFffffff), Color(0xFFd2e8fc)],
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-            stops: [0.0, 1.0],
-            tileMode: TileMode.clamp,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: new Container(
+          // this code is used to get the gradient
+          decoration: new BoxDecoration(
+            gradient: new LinearGradient(
+              colors: [Color(0xFFffffff), Color(0xFFd2e8fc)],
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp,
+            ),
           ),
-        ),
-        // this code is used to get the gradient
+          // this code is used to get the gradient
 
-        child: new Center(
-          child: new Hero(
-            tag: "hero$a",
-            child: fun(a),
+          child: new Center(
+            child: new Hero(
+              tag: "hero$a",
+              child: fun(a),
+            ),
           ),
         ),
       ),
