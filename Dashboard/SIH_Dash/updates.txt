@@ -1,0 +1,9 @@
+white 1dp shadow
+font === productsans\
+    #128fff 
+    caps
+
+
+navbar
+    rounded corner
+    white 1dp shadow

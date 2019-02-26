@@ -1,0 +1,12 @@
+.selections{
+    color: black;
+    cursor: pointer;
+}
+
+.selections:hover{
+    color: #868690;
+}
+
+.myNav {
+    background-color: transparent;
+}

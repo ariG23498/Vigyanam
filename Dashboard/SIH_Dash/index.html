@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vigyanam</title>
+    <link rel="shortcut icon" href="./v-sub_logo.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="signin.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src = './jquery-3.3.1.js' crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="demographics.css">
+
+</head>
+<body>
+       
+        <a  style="box-shadow: 0;margin-left: 2vw;" href="#">
+            <img src="/ministryLogo.png" height="60" width="200"/>        
+        </a>
+        <a class="navbar-brand text-center" style="box-shadow: 0; margin-left: 35vw;" href="#">
+            <img src="/v-logo_full.png" height="180" width="200"/>    
+        </a>
+        <a class="navbar-brand text-center" style="box-shadow: 0; margin-left: 27vw;" href="#">
+            <img src="/SIH_2019_LOGO_final.png" height="150" width="160"/>    
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        
+        <div id="container" align ="center">
+            <form>
+                <input class="iinput" type="text" id="user" onchange="handleuser(event)" placeholder="Username">
+                <input class="iinput" type="password" id="pass" onchange="handlepass(event)" placeholder="Password">
+                <input class="iinput mmbutton" type="submit" id="myButton" onclick="makethishappen(event)" value="Sign In"/>
+            </form>
+        </div>
+
+        <script src="main.js"></script>
+        <script src="./query.js"></script>
+
+
+        <script>
+            let un
+            let pass
+            const handleuser = (event) => {
+                un = event.target.value;
+                console.log(un)
+            }
+            const handlepass = (event) => {
+                pass = event.target.value;
+                console.log(pass)
+            }
+            const makethishappen = (event) => {
+                
+                event.preventDefault();
+                console.log('hey')
+                if(un == 'helloWorld' && pass == '12345'){
+                    console.log("hee")
+                    window.location.href = '/dashboard.html';
+                }
+                else{
+                    alert("Sorry! wrong Password. Try Again.")
+                }
+            }
+
+
+            window.onload = () => {
+                myarr = []
+                for(let i=0;i<7;++i){
+                    for(let j = 0 ;j< 7;++j){
+                        if(i===j){
+                            continue;
+                        }
+                        val =  String(i) + String(j);
+                    if((i==0 && j != 1 )|| (j== 0  && i!=1) || (i==1 && j!=0) || (j==1 && i!=0) ){
+                        //    console.log(val)
+                        //     console.log(document.getElementById(val))
+                            $.ajax({ url: 'http://127.0.0.1:12345/piethumb',
+                                    data: JSON.stringify({label: String(i), value: String(j)}),
+                                    type: 'POST',
+                                    dataType: "JSON",
+                                    beforeSend: function(xhr){xhr.setRequestHeader('Content-Type', 'application/json');},
+                                    success: function(output) {
+                                    console.log((output['ans']))
+                                    myarr.push(output['ans'])
+                                }
+                            });
+                    }else{
+                        // console.log(val)
+                        // console.log(document.getElementById(val))
+
+
+                            // $.ajax({ url: 'http://127.0.0.1:12345/scatterthumb',
+                            //         data: JSON.stringify({label: String(i), value: String(j)}),
+                            //         type: 'POST',
+                            //         dataType: "JSON",
+                            //         beforeSend: function(xhr){xhr.setRequestHeader('Content-Type', 'application/json');},
+                            //         success: function(output) {
+                            //         console.log(output['ans'])
+                            //         // document.getElementById(val).style.backgroundImage = "./" + output['ans'];
+                            //     }
+                            // });           
+                        }
+                    }
+                }
+            }
+
+        </script>
+            <script src="./demographics.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+</body>
+</html>
