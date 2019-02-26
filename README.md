@@ -8,6 +8,5 @@ An app based questionnaire/feedback form with the use of only graphics/pictures/
 
 [Link to problem statement](https://www.youtube.com/watch?v=n7hL-gRhAcU&featur=)
 
-# SIH-App-Designs
-The **UI** and **UX** design components shall be shared.
+# Vigyanam
 The application, is a design centered application for Ministry Of Culture given for **[SIH'09](https://www.sih.gov.in/sih2019)**
