@@ -1,97 +1,98 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  description: "Contains the documentation of the APIs for Vigyanam which is an application for measuring one's scientific temper."
-  version: "1.0.0"
-  title: "Vigyanam"
+  description: >-
+    Contains the documentation of the APIs for Vigyanam which is an application
+    for measuring one's scientific temper.
+  version: 1.0.0
+  title: Vigyanam
   contact:
-    email: "mein2work@gmail.com"
-host: "sih-temper-app.herokuapp.com"
-#basePath: "/v2"
+    email: mein2work@gmail.com
+host: sih-temper-app.herokuapp.com
 tags:
-- name: "Asset mapping"
-  description: "Handles all the mapping between the survey questions and answers."
-- name: "Score calculation"
-  description: "Outputs the score as one's scietific temper recorded from the survey."
-- name: "User data handling"
-  description: "Handles user data."
+  - name: Asset mapping
+    description: Handles all the mapping between the survey questions and answers.
+  - name: Score calculation
+    description: Outputs the score as one's scietific temper recorded from the survey.
+  - name: User data handling
+    description: Handles user data.
+  - name: Database cleansing
+    description: Truncates the DB.
 schemes:
-- "https"
+  - https
 paths:
-  /getasset/{qid}:
+  '/getasset/{qid}':
     get:
       tags:
-      - "Asset mapping"
-      summary: "Gets the asset corresponding to a question."
-      operationId: "getasset"
+        - Asset mapping
+      summary: Gets the asset corresponding to a question.
+      operationId: getasset
       consumes:
-      - "application/json"
+        - application/json
       produces:
-      - "application/json"
+        - application/json
       parameters:
-      - name: "qid"
-        in: "path"
-        description: "ID of the question for which asset needs to be fetched."
-        required: true
-        type: "string"
-        #schema:
-          #$ref: "#/definitions/Pet"
+        - name: qid
+          in: path
+          description: ID of the question for which asset needs to be fetched.
+          required: true
+          type: string
       responses:
-        200:
-          description: "Success"
+        '200':
+          description: Success
           schema:
-            $ref: "#/definitions/Asset_Map_Prototype"
-        400:
-          description: "Question id is wrong, please check the id and try again!"
-  /calculate/{qid}/{aid}:
+            $ref: '#/definitions/Asset_Map_Prototype'
+        '400':
+          description: 'Question id is wrong, please check the id and try again!'
+  '/calculate/{qid}/{aid}':
     get:
       tags:
-      - "Score calculation"
-      summary: "Outputs one's scientific temper as the final score."
-      operationId: "calculateScore"
+        - Score calculation
+      summary: Outputs one's scientific temper as the final score.
+      operationId: calculateScore
       produces:
-      - "application/json"
+        - application/json
       parameters:
-      - name: "qid"
-        in: "path"
-        description: "Question identifier"
-        required: true
-        type: "string"
-      - name: "aid"
-        in: "path"
-        description: "Identified of the answer recoreded."
-        required: true
-        type: "string"
+        - name: qid
+          in: path
+          description: Question identifier
+          required: true
+          type: string
+        - name: aid
+          in: path
+          description: Identified of the answer recoreded.
+          required: true
+          type: string
       responses:
-        200:
-          description: "success"
+        '200':
+          description: success
           schema:
-            type: "object"
+            type: object
             properties:
               score:
-                type: "integer"
-        400:
-          description: "this question does not exist"
-  /sendusrloc/{usr_id}:
+                type: integer
+        '400':
+          description: this question does not exist
+  '/sendusrloc/{usr_id}':
     put:
       tags:
-      - "User data handling"
-      summary: "Creates an entry for the user in the database when he takes the survey."
-      operationId: "sendusrloc"
+        - User data handling
+      summary: Creates an entry for the user in the database when he takes the survey.
+      operationId: sendusrloc
       consumes:
-      - "application/json"
+        - application/json
       produces:
-      - "application/json"
+        - application/json
       parameters:
-      - name: "usr_id"
-        in: "path"
-        description: "User id in path param to check if the user is existing or not"
-        required: true
-        type: string
-      - name: "user"
-        in: "body"
-        description: "Information about the user who is taking the survey."
-        required: true
-        schema:
+        - name: usr_id
+          in: path
+          description: User id in path param to check if the user is existing or not.
+          required: true
+          type: string
+        - name: user
+          in: body
+          description: Information about the user who is taking the survey.
+          required: true
+          schema:
             type: object
             required:
               - usr_id
@@ -110,25 +111,58 @@ paths:
               age_slab:
                 type: integer
       responses:
-        201:
-          description: "success"
-          
+        '201':
+          description: success
+  '/cleardb':
+    post:
+      tags:
+        - Database cleansing
+      summary: Clears the database for application revisioning.
+      operationId: cleardb
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: success
+  
+  '/deletemyphone/{userid}':
+    post:
+      tags:
+        - Database cleansing
+      summary: Deletes the entry for the given user_id from the DB. 
+      operationId: deletemyphone
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: path
+          description: The user whose entry is to be deleted from the DB.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: success        
+  
 definitions:
   Asset_Map_Prototype:
     type: object
     properties:
-      question: 
-        type: "string"
+      question:
+        type: string
       answer:
-        type: "object"
+        type: object
         properties:
-          ans1: 
-            type: "string"
+          ans1:
+            type: string
           ans2:
-            type: "string"
+            type: string
           ans3:
-            type: "string"
+            type: string
           ans4:
-            type: "string"
+            type: string
       endpoint:
-        type: "string"
+        type: string
