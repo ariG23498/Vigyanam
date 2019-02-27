@@ -12,7 +12,7 @@ An app based questionnaire/feedback form with the use of only graphics/pictures/
 - A design-centered mobile application for the Ministry Of Culture given for [SIH'09](https://www.sih.gov.in/sih2019). This application can be used to measure an individual's scientific literacy/scientific temper.
 - A dashboard for the officials of the Ministry Of Culture to inspect how different demographics across India are standing with respect to scientific temper.
 
-![](https://i.ibb.co/4P9bKFB/v-logo-full.jpg)
+![](https://i.ibb.co/N981Nzv/Screen-Shot-2019-02-27-at-11-39-24-AM.png)
 
 # Team HEXATO
 
@@ -25,4 +25,4 @@ An app based questionnaire/feedback form with the use of only graphics/pictures/
 - [Sayak](https://www.linkedin.com/in/sayak-paul/) 
 - [Sunita](https://www.linkedin.com/in/sunitasen/)
 
-![](https://i.ibb.co/wJxHy61/logo.jpg)
+![](https://i.ibb.co/r5pTNkz/Screen-Shot-2019-02-27-at-11-39-39-AM.png)
