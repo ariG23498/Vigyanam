@@ -5,7 +5,7 @@ info:
   title: "Vigyanam"
   contact:
     email: "mein2work@gmail.com"
-host: "sih-temper-app.herokuapp.com"
+host: "sih-temper-app.eu-gb.mybluemix.net"
 #basePath: "/v2"
 tags:
 - name: "Asset mapping"
@@ -109,7 +109,15 @@ paths:
       responses:
         201:
           description: "success"
-          
+  /getuserdb:
+    get:
+      tags:
+      - "Database to dashboard!"
+      summary: "Feeds all live data to dashboard from the data!"
+      operationId: "getuserdb"
+      responses:
+        200:
+          description: "success"
 definitions:
   Asset_Map_Prototype:
     type: object
