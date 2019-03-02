@@ -17,7 +17,7 @@ tags:
 schemes:
 - "https"
 paths:
-  /getasset/{qid}:
+  /getasset:
     get:
       tags:
       - "Asset mapping"
@@ -27,14 +27,14 @@ paths:
       - "application/json"
       produces:
       - "application/json"
-      parameters:
-      - name: qid
-        in: path
-        description: "ID of the question for which asset needs to be fetched."
-        required: true
-        type: "string"
-        #schema:
-          #$ref: "#/definitions/Pet"
+      # parameters:
+      # - name: qid
+      #   in: path
+      #   description: "ID of the question for which asset needs to be fetched."
+      #   required: true
+      #   type: "string"
+      #   #schema:
+      #     #$ref: "#/definitions/Pet"
       responses:
         200:
           description: "Success"
@@ -122,22 +122,25 @@ definitions:
   Asset_Map_Prototype:
     type: object
     properties:
-      question: 
-        type: "string"
-      answer:
-        type: "object"
-        properties:
-          ans1: 
-            type: "string"
-          ans2:
-            type: "string"
-          ans3:
-            type: "string"
-          ans4:
-            type: "string"
-      endpoint:
-        type: "string"
+      map:
+        type : array
+        items:
+          type: object
+          properties:
+            qid:
+              type: string
+            category:
+              type: string
+            qnum:
+              type: number
+            ui_type:
+              type: string
+          
+            
+          
+            
         
+      
   Answer_Map_Prototype:
     type: object
     properties:
