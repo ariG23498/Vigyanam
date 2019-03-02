@@ -17,6 +17,48 @@ tags:
 schemes:
 - "https"
 paths:
+
+  /sendusrloc/{usr_id}:
+      put:
+        tags:
+        - "User data handling"
+        summary: "Creates an entry for the user in the database when he takes the survey."
+        operationId: "sendusrloc"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters:
+        - name: "usr_id"
+          in: "path"
+          description: "User id in path param to check if the user is existing or not"
+          required: true
+          type: string
+        - name: "user"
+          in: "body"
+          description: "Information about the user who is taking the survey."
+          required: true
+          schema:
+              type: object
+              required:
+                - latitude
+                - longitude
+                - age_slab
+              properties:
+                latitude:
+                  type: number
+                  format: double
+                longitude:
+                  type: number
+                  format: double
+                age_slab:
+                  type: integer
+        responses:
+          201:
+            description: "success"
+          400:
+            description: An item with user id '{usr_id}' already exists.
+          
   /getasset:
     get:
       tags:
@@ -43,7 +85,7 @@ paths:
         400:
           description: "Question id is wrong, please check the id and try again!"
           
-  '/calculate/{uid}':
+  '/calculate/{usr_id}':
     put:
       tags:
         - Score calculation
@@ -54,14 +96,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - name: uid
+        - name: usr_id
           in: path
           description: Question identifier
-          required: true
-          type: string
-        - name: aid
-          in: path
-          description: Identified of the answer recoreded.
           required: true
           type: string
       responses:
@@ -71,44 +108,7 @@ paths:
             $ref: "#/definitions/Answer_Map_Prototype"
         '400':
           description: this question does not exist
-  /sendusrloc/{usr_id}:
-    put:
-      tags:
-      - "User data handling"
-      summary: "Creates an entry for the user in the database when he takes the survey."
-      operationId: "sendusrloc"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "usr_id"
-        in: "path"
-        description: "User id in path param to check if the user is existing or not"
-        required: true
-        type: string
-      - name: "user"
-        in: "body"
-        description: "Information about the user who is taking the survey."
-        required: true
-        schema:
-            type: object
-            required:
-              - latitude
-              - longitude
-              - age_slab
-            properties:
-              latitude:
-                type: number
-                format: double
-              longitude:
-                type: number
-                format: double
-              age_slab:
-                type: integer
-      responses:
-        201:
-          description: "success"
+  
   /getuserdb:
     get:
       tags:
