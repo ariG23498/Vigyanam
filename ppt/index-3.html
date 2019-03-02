@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>SIH 2019</title>
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <style>
+    body {
+        background: #000;
+    }
+
+    .step {
+        height: 700px !important;
+        width: 700px !important;
+    }
+
+    .step p, .step h3, .step img, .step ul, .step ol, .step li{
+        display: none;
+    }
+
+    .active p, .active h3, .active img, .active ul, .active ol, .active li{
+        display: inline-block;
+        color: #fff;
+    }
+
+    .st1{
+        color: #dfdfdf !important;
+        font-size: smaller;
+    }
+
+    .stext{
+        font-size: smaller;
+    }
+
+
+    .quote{
+        background: #e6e6e6;
+        padding: 0.5em;
+        box-shadow: -4px 3px 20px 0px #0000006b;
+        color: #777 !important;
+        font-style: italic;
+    }
+
+    .slide {
+        background: #128fff;
+    }
+
+    /* Gradient transparent - color - transparent */
+
+    hr.style-two {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+        margin-top: 30px;
+    }
+
+    </style>
+</head>
+
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+    <div id="impress">
+
+        <div class="step" data-x="2400" data-y="0" data-z="3000" data-scale="5" data-rotate-y="20" data-rotate-x="0">
+        </div>
+
+        <div class="step" data-x="2400" data-y="0" data-z="3000" data-scale="5" data-rotate-y="0" data-rotate-x="0" data-autoplay="1">
+        </div>
+
+        <div class="step slide" data-x="1750" data-y="0" data-z="3000" data-rotate-y="270" data-rotate-z="-90">
+            <h3>The Problem</h3> 
+            <br /> <hr class="style-two" /><br /> <br /> <br /> 
+            <p>To measure the scientific literacy/temper amongst crosssection of population</p><br><br>
+            <p class="st1">An app based questionnaire / feedback form with the use of only graphics/charts/pictures without text material could be developed for analysing feedback.</p>
+        </div>
+        <div class="step slide" data-x="2050" data-y="-550" data-z="3000" data-rotate-x="270" data-rotate-y="215" data-rotate-z="180">
+             <h3>Solution Architecture</h3>
+             <br /> <hr class="style-two" />
+            <p class='stext'>
+                <ol class='stext'>
+                    <li class='stext'>1. Scientific temper is a way of life - an individual and social process of thinking and acting - which uses a scientific method, which may include questioning, observing physical reality, testing, hypothesizing, analyzing and communicating.</li>
+                    <li class='stext'>2. Describes an attitude which involves the application of logic. Discussion, argument and analysis are vital parts of scientific temper.</li>
+                </ol>
+                <br />
+                <br />
+                <p class="quote stext">
+                    “Scientific temper may be defined as a temperament which connotes a type of frame or disposition of mind which is free from superstition, prejudice, rigidness, obscurantism, close-mindedness, irrationality, un-innovativeness, subjectivity and other parochial tendencies.”
+                </p>
+            </p>
+        </div>
+        <div class="step slide" data-x="2650" data-y="-550" data-z="3000" data-rotate-x="90" data-rotate-y="35" data-rotate-z="360">
+            <p>Hello Slide 1 - 3</p>
+        </div>
+        <div class="step slide" data-x="2950" data-y="0" data-z="3000" data-rotate-y="90" data-rotate-z="450">
+            <p>Hello Slide 1 - 4</p>
+        </div>
+        <div class="step slide" data-x="2650" data-y="550" data-z="3000" data-rotate-x="270" data-rotate-y="35" data-rotate-z="180">
+            <p>Hello Slide 1 - 5</p>
+        </div>
+        <div class="step slide" data-x="2050" data-y="550" data-z="3000" data-rotate-x="90" data-rotate-y="215" data-rotate-z="360">
+            <p>Hello Slide 1 - 6</p>
+        </div>
+
+
+        <div class="step" data-x="2400" data-y="0" data-z="2000" data-scale="5" data-rotate-y="0" data-rotate-x="0">
+        </div>
+        <div class="step" data-x="2400" data-y="0" data-z="2000" data-scale="1" data-rotate-y="0" data-rotate-x="0">
+        </div>
+
+
+        <div class="step slide" data-x="1750" data-y="0" data-z="0" data-rotate-y="270" data-rotate-z="-90">
+            <p>Hello Slide 2 - 1</p>
+        </div>
+        <div class="step slide" data-x="2050" data-y="-550" data-z="0" data-rotate-x="270" data-rotate-y="215" data-rotate-z="180">
+            <p>Hello Slide 2 - 2</p>
+        </div>
+        <div class="step slide" data-x="2650" data-y="-550" data-z="0" data-rotate-x="90" data-rotate-y="35" data-rotate-z="360">
+            <p>Hello Slide 2 - 3</p>
+        </div>
+        <div class="step slide" data-x="2950" data-y="0" data-z="0" data-rotate-y="90" data-rotate-z="450">
+            <p>Hello Slide 2 - 4</p>
+        </div>
+        <div class="step slide" data-x="2650" data-y="550" data-z="0" data-rotate-x="270" data-rotate-y="35" data-rotate-z="180">
+            <p>Hello Slide 2 - 5</p>
+        </div>
+        <div class="step slide" data-x="2050" data-y="550" data-z="0" data-rotate-x="90" data-rotate-y="215" data-rotate-z="360">
+            <p>Hello Slide 2 - 6</p>
+        </div>
+
+
+        <!--- Part 2 --->
+        <div class="step" data-x="2400" data-y="0" data-z="0" data-scale="5" data-rotate-y="0" data-rotate-x="0">
+        </div>
+        <div class="step" data-x="2400" data-y="0" data-z="-5000" data-scale="5" data-rotate-y="0" data-rotate-x="0">
+        </div>
+
+
+        <div class="step slide" data-x="1750" data-y="0" data-z="-5000" data-rotate-y="270" data-rotate-z="-90">
+            <p>Hello Slide 3 - 1</p>
+        </div>
+        <div class="step slide" data-x="2050" data-y="-550" data-z="-5000" data-rotate-x="270" data-rotate-y="215" data-rotate-z="180">
+            <p>Hello Slide 3 - 2</p>
+        </div>
+        <div class="step slide" data-x="2650" data-y="-550" data-z="-5000" data-rotate-x="90" data-rotate-y="35" data-rotate-z="360">
+            <p>Hello Slide 3 - 3</p>
+        </div>
+        <div class="step slide" data-x="2950" data-y="0" data-z="-5000" data-rotate-y="90" data-rotate-z="450">
+            <p>Hello Slide 3 - 4</p>
+        </div>
+        <div class="step slide" data-x="2650" data-y="550" data-z="-5000" data-rotate-x="270" data-rotate-y="35" data-rotate-z="180">
+            <p>Hello Slide 3 - 5</p>
+        </div>
+        <div class="step slide" data-x="2050" data-y="550" data-z="-5000" data-rotate-x="90" data-rotate-y="215" data-rotate-z="360">
+            <p>Hello Slide 3 - 6</p>
+        </div>
+
+    </div>
+    <script>
+    if ("ontouchstart" in document.documentElement) {
+        document.querySelector(".hint").innerHTML = "<p>Swipe left or right to navigate</p>";
+    }
+    </script>
+    <script src="js/impress.js"></script>
+    <script>
+    impress().init();
+    </script>
+</body>
+
+</html>
