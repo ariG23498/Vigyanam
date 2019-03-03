@@ -1,0 +1,89 @@
+html {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(255, 255, 255,0.5)) ,url('/website_pattern.png');
+    filter: alpha(opacity=30);
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=30);
+    background-size: cover; 
+  
+  }
+  
+  body{
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(255, 255, 255,0.5)) ,url('/website_pattern.png');
+    filter: alpha(opacity=30);
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=30);
+    background-size: cover; 
+    height: 100%;
+ 
+  }
+
+  #container {
+    background-color: #e3eae4;
+    height: 400px;
+    width: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: box-shadow 1s;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  #container:hover {
+    box-shadow: -15px -10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .someNav{
+    /* background: initial; */
+    height: 7.2vh;
+    width: 95vw;
+    margin-top: 1.5vh;
+    margin-left: 2vh;
+    margin-bottom: 5vh;
+    margin-left: 2vw;
+    position: fixed;
+    margin-right: 2vw;
+    overflow: auto;
+    border-radius: 30px;
+    /* box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1); */
+}
+  
+  form {
+    margin-top: 75px;
+  }
+
+  #myButton {
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  #myButton:hover {
+    box-shadow: 0 5px 15px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .iinput {
+    width: 80%;
+    padding: 16px 40px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+  }
+  
+  .mmbutton{
+    background-color: #876e64;
+    width: 80%;
+    border: none;
+    color: white;
+    /* opacity: 0.3; */
+    padding: 10px 0;
+    margin-top: 40px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  
+  .mmbutton:hover {
+    filter: brightness(110%);
+  }

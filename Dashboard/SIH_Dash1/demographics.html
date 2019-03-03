@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Dashboard</title>
+        <link rel="shortcut icon" href="./v-sub_logo.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="demographics.css">
+
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src = './jquery-3.3.1.js' crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <nav class="navbar myNav navbar-expand-lg ">
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+            
+            <div id = "navbarNav">
+                <a  style="background-color: transparent ;box-shadow: 0;" href="#">
+                    <img src="/ministryLogo.png" class="minLog"  />        
+                </a>
+                <a class="text-center" style="background-color: transparent ;box-shadow: 0; margin-left: 33vw;" href="#">
+                    <img src="/v-logo_fullC.png" class="vigLog"/>    
+                </a>
+                <a class="text-center" style="background-color: transparent ;box-shadow: 0; margin-left: 24vw; " href="#">
+                    <img src="/SIH_2019_LOGO_final.png" class="sihLog"/>    
+                </a>
+            </div>
+    
+            <!-- <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav"> -->
+                <!-- <li class="nav-item active buttonlink">
+                    <a class="nav-link grow" href="#">Comparison <span class="sr-only">(current)</span></a>
+                </li>  -->
+                <!-- <li class="nav-item buttonlink">
+                    <a class="nav-link grow" href="/demographics.html">Demographics</a>
+                </li> -->
+                <!-- <li class="nav-item buttonlink" style="right: 2vw; position: absolute; right: 60px;">
+                    <a class="nav-link grow" href="./">Signout</a>
+                </li> -->
+    
+                <!-- <div  style=" position: relative;right: 10px;">
+                    <img src = "SIH_2019_LOGO_final.png" height="100" width="100" style="position: absolute ;right:10px"/>
+                </div> -->
+                <!-- </ul>
+                
+            </div> -->
+        </nav>
+    
+    <div class="row">
+        <div class="col-4">
+                <ul class="navbar-nav">
+                    <li class="nav-item active buttonlink" style="margin-top:23vh">
+                        <a class="nav-link grow" href="./dashboard.html">Comparison <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item buttonlink">
+                        <a class="nav-link grow" href="/demographics.html">Demographics</a>
+                    </li>
+                   
+                    <li class="nav-item buttonlink">
+                        <a class="nav-link grow" href="./">Sign Out</a>
+                    </li>
+                </ul>
+        </div>
+        <div class="col-5 plot" id="plot">
+                
+            <iframe width="600" height="500" id = "myGraph" frameborder="0" scrolling="no" src=""></iframe>
+
+        </div>
+        <div class="col-3" style="padding-top: 20vh;">
+                <div>
+                    <div id = "HeadTitle">Demographic Plot Except:</div>
+                <form>
+                    <!-- <input type="checkbox" name="selections" checked = "True" class="selections text-center" value = "mAll">Overall<br/> -->
+                    <input type="checkbox" name="selections" class="selections text-center" value = 'si_rank'>Scientific Information<br/>
+                    <input type="checkbox" name="selections" class="selections text-center" value = 'se_rank'>Spirit of Enquiry<br/>
+                    <input type="checkbox" name="selections" class="selections text-center" value = 'rt_rank'>Rationality<br/>
+                    <input type="checkbox" name="selections" class="selections text-center" value = 'cs_rank'>Cause Effect Relationship<br/>
+                </form>
+                    <br/><button class="btn-primary" id= "updateButton">Apply</button>
+                </div>
+
+        </div>
+    </div>
+
+    <div class="footer text-center">
+        Designed and Developed by
+        <img src="/logo.jpg" height="50px" width="50px"/>
+        
+        <br/>
+        <br/>
+    </div>
+    
+    <script src="./demographics.js"></script>
+
+    <script src="./main.js"></script>
+    <script src="./query.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
+
+
+<!-- navigation bar
+<nav class="navbar myNav navbar-expand-lg ">
+        <a class="navbar-brand" style="background-color: transparent ;box-shadow: 0; margin-top: 1vh" href="#">
+            <img src="/ministryLogo.png" height="60" width="200"/>        
+        </a>
+        <a class="navbar-brand text-center" style="background-color: transparent ;box-shadow: 0; margin-left: 30vw; margin-top: 1vh" href="#">
+            <img src="/v-logo_full.png" height="200" width="200"/>    
+        </a>
+        <a class="navbar-brand text-center" style="background-color: transparent ;box-shadow: 0; margin-left: 24vw; margin-top: 6vh" href="#">
+            <img src="/SIH_2019_LOGO_final.png" height="150" width="160"/>    
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <---<div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item active buttonlink">
+                <a class="nav-link grow" href="#">Comparison <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item buttonlink">
+                <a class="nav-link grow" href="/demographics.html">Demographics</a>
+            </li> -->
+            <!-- <li class="nav-item buttonlink" style="right: 2vw; position: absolute; right: 60px;">
+                <a class="nav-link grow" href="./">Signout</a>
+            </li> -->
+
+            <!-- <div  style=" position: relative;right: 10px;">
+                <img src = "SIH_2019_LOGO_final.png" height="100" width="100" style="position: absolute ;right:10px"/>
+            </div>
+            </ul> -->
+            
+        <!-- </div>
+    </nav> --> 

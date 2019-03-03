@@ -1,0 +1,340 @@
+/* cyrillic */
+@font-face {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Product Sans'), local('ProductSans-Regular'), url(https://fonts.gstatic.com/s/productsans/v9/pxiDypQkot1TnFhsFMOfGShVF9eO.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+body{
+    /* background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url('/website_pattern.png'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    font-family: 'Product Sans';
+    
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+}
+.plot{
+    max-width: 100vh;
+    height: 75vh;
+}
+
+.myGraph{
+    float: left;
+}
+
+.graphOptions {
+    float: right;
+}
+
+.footer {
+   
+    color: black;
+
+    padding-bottom: 0px;
+    bottom: 0px;
+    margin: 0px;
+}
+
+.myNav{
+    background-color: transparent;
+    margin-left: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 30px;
+    /* box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1); */
+
+}
+
+.minLog {
+    height: 7vh;
+    width: 10vw;
+}
+
+.vigLog {
+    height: 8vh;
+    width: 11vw;
+}
+
+.sihLog {
+    height: 17vh;
+    width: 9vw;
+}
+
+.buttonlink{
+    background-color: white;
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 1.3vw;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    text-align: center;
+    width: 20vw;
+}
+
+.buttonlink a{
+    color: #f00 !important;
+}
+
+
+
+.vert {
+    float: left;
+    width: 12%;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+.vert .square{
+    box-shadow:-8px 1px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.horz{
+    float: right;
+    width: 88%;
+    height: 12%;
+    overflow: hidden;
+   
+}
+
+.horz .square{
+    box-shadow: -3px -13px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+    height: 88%;
+    width: 88%;
+    float: right;
+    float: bottom;
+}
+
+.square {
+    float: left;
+    margin: 1px;
+    cursor: pointer;
+    padding-top: 3vh;
+    /* border-radius: 25px; */
+    color: #128fff;
+    overflow: hidden;
+    font-size: 1vw;
+    background-color: transparent;
+    background-size: cover;
+}
+
+.thumbnail {
+    float: left;
+    margin: 1px;
+    cursor: pointer;
+    /* border-radius: 10px; */
+    border: 0.5px solid black;
+    background-image: url(gplot.png);
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+}
+
+.squares {
+    float: left;
+    /* margin: 2px; */
+    /* border: 0.5px solid black; */
+    /* border-radius: 15px; */
+    font-size: 1.6vw;
+    background-color: transparent;
+    background-size: cover;
+}
+
+.showPlot {
+    margin-top: 2vh;
+}
+
+.showPlot1 {
+    margin-top: 2vh;
+}
+
+.square:hover, .content:hover {
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+}
+
+.squaree{
+    float: left;
+    margin: 1px;
+    font-size: 1.6vw;
+    background-color: transparent;
+   
+}    
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    visibility: block;
+    padding-top: 30px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+.modal-content {
+    min-height: 80vh;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.choosebtn{
+    max-width: 200px;
+    position: absolute;
+    right: 15px;
+}
+
+#btn3 {
+    max-width: 200px;
+    bottom: 15px;
+    position: absolute;
+    left: 12px;
+}
+
+/* The Close Button */
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+
+
+/* button k liye jhamela */
+.br-pill {
+    border-radius: 9999px;
+    max-width: 20%;
+}
+
+.ttu {
+    text-transform: uppercase;
+}
+
+.fw6 {
+    font-weight: 600;
+}
+
+.tracked {
+    letter-spacing: .1em;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.bg-black {
+    background-color: #000;
+}
+
+.bg-near-black {
+    background-color: #111;
+}
+
+.pv2 {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.ph3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.mb2 {
+    margin-bottom: .5rem;
+}
+
+.white {
+    color: #fff;
+}
+
+.no-underline {
+    text-decoration: none !important;
+}
+
+
+.f6 {
+    font-size: .875rem;
+}
+
+.grow {
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform .25s ease-out;
+}
+
+.grow:hover, .grow:focus {
+    transform: scale(1.05);
+}
+
+.grow:active {
+    transform: scale(.9);
+}
+
+.float-my-children > * {
+    float:left;
+    margin-right:5px;
+}
+
+/* this is called a clearfix. it makes sure that the container's children floats are cleared, without using extra markup */
+
+.clearfix {
+    *zoom:1 /* for IE */
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+@media only screen and (max-width: 1026px) {
+    .myNav {
+        margin-top: 0vh;
+        margin-bottom: 1vh;
+    }
+    .sihLog {
+        display: none;
+
+    }
+
+    .vigLog {
+        width: 15vw;
+    }
+
+    
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vigyaman:Home Page</title>
+    <link rel="shortcut icon" href="./v-sub_logo.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src = './jquery-3.3.1.js' crossorigin="anonymous"></script>
+
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
+</head>
+<body>
+    <nav class="navbar myNav navbar-expand-lg ">
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+        
+        <div id = "navbarNav">
+            <a  style="background-color: transparent ;box-shadow: 0;" href="#">
+                <img src="/ministryLogo.png" class="minLog"  />        
+            </a>
+            <a class="text-center" style="background-color: transparent ;box-shadow: 0; margin-left: 33vw;" href="#">
+                <img src="/v-logo_fullC.png" class="vigLog"/>    
+            </a>
+            <a class="text-center" style="background-color: transparent ;box-shadow: 0; margin-left: 24vw; " href="#">
+                <img src="/SIH_2019_LOGO_final.png" class="sihLog"/>    
+            </a>
+        </div>
+
+        <!-- <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav"> -->
+            <!-- <li class="nav-item active buttonlink">
+                <a class="nav-link grow" href="#">Comparison <span class="sr-only">(current)</span></a>
+            </li>  -->
+           <!-- <li class="nav-item buttonlink">
+                <a class="nav-link grow" href="/demographics.html">Demographics</a>
+            </li> -->
+            <!-- <li class="nav-item buttonlink" style="right: 2vw; position: absolute; right: 60px;">
+                <a class="nav-link grow" href="./">Signout</a>
+            </li> -->
+
+            <!-- <div  style=" position: relative;right: 10px;">
+                <img src = "SIH_2019_LOGO_final.png" height="100" width="100" style="position: absolute ;right:10px"/>
+            </div> -->
+            <!-- </ul>
+            
+        </div> -->
+    </nav>
+
+    <div>
+        <div class="row">
+            <div class="col-4">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active buttonlink" style="margin-top:23vh">
+                            <a class="nav-link grow" href="#">Comparison <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item buttonlink">
+                            <a class="nav-link grow" href="/demographics.html">Demographics</a>
+                        </li>
+                        
+                        <li class="nav-item buttonlink">
+                            <a class="nav-link grow" href="./">Sign Out</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="col-8 plot" id="plot">
+                <div class="vert" id = 'vert'></div>
+                <div class="horz" id = 'horz'></div>
+                <div class="main" id = 'main'></div>
+            </div>
+        </div>
+    </div>
+          
+    
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="showPlot" class="showPlot">
+                <iframe id="igraph1" scrolling="no" style="border:none;" seamless="seamless" src="" height="525" width="100%"></iframe>
+            </div>
+            <div class="showPlot1" id="showPlot1">
+                <iframe id="igraph2" scrolling="no" style="border:none;" seamless="seamless" src="" height="525" width="100%"></iframe>
+            </div>
+            <div class="btn-group choosebtn" role="group" aria-label="Basic example">
+                <button type="button active" class="btn btn-secondary" onclick="btn1fn()" id = "btn1"></button>
+                <button type="button" class="btn btn-secondary" onclick="btn2fn()" id = "btn2"></button>
+            </div>
+            <button type="button" class="btn btn-secondary" id = "btn3">Export Plot</button>
+
+            <!-- <button class="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-near-black center" id="btn1" href="#0"></button>
+            <button class="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-near-black center" id = "btn2" href="#0"></button> -->
+        </div>
+    
+    </div>
+    
+
+    <div class="footer text-center">
+        Designed and Developed by
+        <img src="/logo.jpg" height="50px" width="50px"/>
+        
+        <br/>
+        <br/>
+    </div>
+
+    <script src="./main.js"></script>
+    <script src="./query.js"></script>
+    <!-- <script src="./jquery-3.3.1.min.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
