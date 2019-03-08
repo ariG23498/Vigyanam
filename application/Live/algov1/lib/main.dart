@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+import 'gender.dart';
+import 'dart:async';
+import 'package:device_id/device_id.dart';
+
+String androidId = 'unknown';
+String gender = 'null';
+Map<String, double> currentLocation = new Map();
+Map auth = new Map();
+void main() {
+  runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: "Vigyanam",
+    home: new MyApp(),
+  ));
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  //to check whether the Android id has been recieved or not
+  bool recieveId = false;
+
+  @override
+  void initState() {
+    super.initState();
+    initDeviceId();
+  }
+
+  Future<void> initDeviceId() async {
+    DeviceId.getID.then((deviceid) {
+      setState(() {
+        androidId = deviceid;
+        //turns the recieve boolean to be true
+        recieveId = true;
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    //if the android id is recieved
+    if (recieveId) {
+      print("build1");
+      return new Scaffold(
+        body: new Center(
+          child: Image.asset(
+            "assets/loc.png",
+          ),
+        ),
+        floatingActionButton: new FloatingActionButton(
+          onPressed: () {
+            auth['usr_id'] = androidId;
+            Navigator.push(
+                context, new MaterialPageRoute(builder: (context) => Gender()));
+          },
+          child: Icon(Icons.arrow_forward),
+          foregroundColor: Color(0xFF128fff),
+          backgroundColor: Color(0xFFffffff),
+        ),
+      );
+    }
+    //if the android id has not been recieved
+    else {
+      return new Scaffold(
+        body: Center(
+          child: Text("Not done"),
+        ),
+      );
+    }
+  }
+}
