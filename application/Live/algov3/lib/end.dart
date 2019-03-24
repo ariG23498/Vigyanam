@@ -21,7 +21,7 @@ class _EndPageState extends State<EndPage> {
               child: Padding(
                 padding: new EdgeInsets.fromLTRB(15, 110, 0.0, 0.0),
                 child: Text(
-                  "${overAllScore*10}%",
+                  "${(overAllScore*10).round()}%",
                   style: TextStyle(color: Color(0xFF0575e6), fontSize: 72),
                 ),
               ),
