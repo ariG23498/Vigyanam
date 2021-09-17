@@ -9,7 +9,9 @@
     "nodemon": "^1.18.10",
     "tachyons": "^4.11.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "set-value": ">=4.0.1"
+  }
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
